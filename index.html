@@ -745,9 +745,19 @@
             filter: drop-shadow(0 0 12px rgba(0, 221, 238, 0.9));
         }
 
-        /* Pg 43: VERO O FALSO (Truth Filter) */
-        .shine-truth-filter {
-            background-image: linear-gradient(110deg, #cc0022 0%, #ff0033 20%, #00ff66 40%, #ffffff 50%, #00cc44 60%, #0099ff 80%, #cc0022 100%);
+        /* Pg 43: VERO O FALSO (Truth Duality - Stile Abbinato Grafica) */
+        .shine-truth-duality {
+            /* Gradiente "Digital Scanner": Rosso (Falso) -> Luce (Filtro) -> Verde (Vero) */
+            background-image: linear-gradient(
+                110deg, 
+                #FF4444 0%,      /* Rosso Chiaro Segnaletica */
+                #CC0000 20%,     /* Rosso Scuro (Stop) */
+                #FFFFFF 48%,     /* Fascio di luce bianco netto (Il Filtro) */
+                #FFFFFF 52%,     
+                #00FF00 70%,     /* Verde Neon (Via libera) */
+                #00CC00 90%,     /* Verde Scuro Tech */
+                #FF4444 100%     /* Loop al rosso */
+            );
             background-size: 200% auto;
             color: transparent !important;
             -webkit-background-clip: text;
@@ -755,7 +765,8 @@
             -webkit-text-fill-color: transparent;
             /* DURATA MODIFICATA A 1.8s */
             animation: shineMove 1.8s linear 1 forwards;
-            filter: drop-shadow(0 0 12px rgba(0, 204, 68, 0.8));
+            /* Ombra nera solida per massimo contrasto grafico + bagliore tecnologico */
+            filter: drop-shadow(2px 2px 0px #000000) drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
         }
 
         /* Pg 44: EQUILIBRIO (Zen Balance) */
@@ -784,17 +795,29 @@
             filter: drop-shadow(0 0 12px rgba(51, 204, 255, 0.9));
         }
 
-        /* Pg 46: FUTURO (Future Dawn) */
-        .shine-future-dawn {
-            background-image: linear-gradient(110deg, #667799 0%, #8899bb 20%, #ffaa33 40%, #ffcc66 50%, #ffbb77 60%, #6699cc 80%, #667799 100%);
+        /* Pg 46: FUTURO (El Dorado Theme - Nuovo Stile) */
+        .shine-el-dorado {
+            /* Gradiente Oro Antico Metallico complesso */
+            background-image: linear-gradient(
+                110deg,
+                #BF953F 0%,      /* Bronzo */
+                #FCF6BA 25%,     /* Oro Pallido */
+                #B38728 40%,     /* Oro Metallico */
+                #FFFFFF 50%,     /* Luce Pura */
+                #AA771C 60%,     /* Oro Profondo */
+                #BF953F 100%     /* Bronzo */
+            );
             background-size: 200% auto;
             color: transparent !important;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* DURATA MODIFICATA A 1.8s */
-            animation: shineMove 1.8s linear 1 forwards;
-            filter: drop-shadow(0 0 15px rgba(255, 187, 119, 0.9));
+            /* Animazione maestosa */
+            animation: shineMove 2.2s linear 1 forwards;
+            /* Ombra color Terra Bruciata/Caffè per contrasto antico */
+            filter: drop-shadow(2px 2px 0px #3E2723) drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+            font-family: 'Cinzel', serif !important; /* Font Epico */
+            letter-spacing: 2px;
         }
 
         /* Pg 47: ENERGIA (Energy Sphere) */
@@ -1114,13 +1137,12 @@
         ];
 
         const texts = [
-            // PAGINA 2: INDICE (SCALA MAGENTA ALTO CONTRASTO)
+            // PAGINA 2: INDICE (SCALA MAGENTA ALTO CONTRASTO - FIX TITOLO)
             {
                 pageIndex: 2, content: "INDICE",
                 speed: 15, top: 8, left: 0, width: 100,
-                // Titolo: Magenta Elettrico Puro con contorno nero massiccio
-                color: '#FF00FF',
-                effect: 'titolo-indice',
+                // RIMOSSO 'effect: titolo-indice' per sbloccare il colore
+                color: '#4A004A', 
                 fontSize: '56px', fontWeight: '900', textAlign: 'center',
                 fontFamily: "'Cinzel', serif",
                 textShadow: '3px 3px 0 #000, -1px -1px 0 #000, 0 0 25px #FF00FF'
@@ -1348,11 +1370,10 @@
                 pageIndex: 9, content: "INTERNET NON DIMENTICA",
                 // Posizione mantenuta (Top 2%, Left 3%)
                 speed: 25, top: 2, left: 3, width: 80,
-                // STILE AGGIORNATO (Prompt: Glowing Golden Neon Halo)
-                color: '#FFD700', // Oro Neon
-                // Alone luminoso forte (Halo Effect)
-                textShadow: '0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FF8C00, 0 0 60px #B8860B',
-                fontSize: '42px', fontWeight: '700', textAlign: 'left',
+                color: '#00FFFF', 
+                // AUMENTO CONTRASTO: Bordo Nero Solido (3px) + Glow Ciano
+                textShadow: '3px 3px 0 #000000, -1px -1px 0 #000000, 0 0 15px #00FFFF',
+                fontSize: '42px', fontWeight: '900', textAlign: 'left', // Grassetto aumentato a 900
                 fontFamily: "'Cormorant Garamond', serif"
             },
             {
@@ -1361,11 +1382,10 @@
                 // Allineato col titolo a sinistra al 3%
                 speed: 10, top: 30, left: 3, width: 22,
                 lineHeight: '1.4', 
-                // STILE AGGIORNATO (Prompt: Glowing Cyan Blue, High Contrast)
-                color: '#00FFFF', // Ciano Elettrico
-                // Bagliore per leggibilità su fondo scuro
-                textShadow: '0 0 5px #00FFFF, 0 0 10px #00CED1, 2px 2px 4px #000000',
-                fontSize: '24px', textAlign: 'left', fontWeight: '600',
+                color: '#FFD700', 
+                // AUMENTO CONTRASTO: Bordo Nero Solido (2px) + Glow Oro
+                textShadow: '2px 2px 0 #000000, -1px -1px 0 #000000, 0 0 10px #FFD700',
+                fontSize: '24px', textAlign: 'left', fontWeight: '700', // Grassetto aumentato a 700
                 fontFamily: "'Cormorant Garamond', serif"
             },
             // PAGINA 10
@@ -1448,7 +1468,8 @@
             {
                 pageIndex: 13,
                 content: "I tuoi dati sono tuoi.\nNessuno dovrebbe spiare le tue conversazioni o tracciare i tuoi movimenti senza permesso.",
-                speed: 10, top: 25, left: 5, width: 45, 
+                // Testo abbassato di 7% (da 25 a 32)
+                speed: 10, top: 32, left: 5, width: 45, 
                 // Clean Bright White Light for maximum contrast
                 color: '#FFFFFF', 
                 fontSize: '20px', fontWeight: '400', // Refined modern sans-serif
@@ -1461,8 +1482,8 @@
             {
                 pageIndex: 14, 
                 content: "I DATI SONO ORO",
-                // Centrato e alzato di 3% (da 10 a 7)
-                speed: 15, top: 7, left: 0, width: 100,
+                // Alzato ulteriormente di 3% (da 7 a 4)
+                speed: 15, top: 4, left: 0, width: 100,
                 fontSize: '32px', fontWeight: '800', textAlign: 'center',
                 effect: 'shine-data-vault'
             },
@@ -1503,16 +1524,20 @@
             // PAGINA 16
             {
                 pageIndex: 16, content: "DIRITTO DI ACCESSO",
-                speed: 15, top: 10, left: 10, width: 80,
+                // Allineato a sinistra per coerenza con la colonna di testo
+                speed: 15, top: 10, left: 5, width: 80,
                 fontSize: '34px', fontWeight: '800',
                 effect: 'shine-cascade-blue'
             },
             {
                 pageIndex: 16,
                 content: "Internet è una risorsa fondamentale.\nTutti dovrebbero poter accedere alla conoscenza, senza barriere economiche o fisiche.",
-                speed: 10, top: 25, left: 10, width: 60,
-                color: '#b3e5fc', fontSize: '20px', fontWeight: '500',
-                textShadow: '0 0 10px rgba(0, 212, 255, 0.6), 2px 2px 4px rgba(0,0,0,0.8)'
+                // Testo in colonna stretta a sinistra (width 40)
+                speed: 10, top: 25, left: 5, width: 40,
+                // AUMENTO CONTRASTO: Bianco puro + Grassetto + Bordo Nero
+                color: '#FFFFFF', fontSize: '22px', fontWeight: '700',
+                fontFamily: "'Open Sans', sans-serif",
+                textShadow: '2px 2px 0 #000000, 0 0 10px rgba(0, 191, 255, 0.8)'
             },
             // PAGINA 17
             {
@@ -1602,8 +1627,8 @@
             {
                 pageIndex: 20,
                 content: "Internet non è il Far West.\nEssere cittadini digitali significa capire che ogni azione ha una conseguenza, per noi e per gli altri.",
-                // Alzato testo di 10% (da 65 a 55)
-                speed: 10, top: 55, left: 5, width: 40,
+                // Testo alzato di 12% (da 55 a 43)
+                speed: 10, top: 43, left: 5, width: 40,
                 // AUMENTATO CONTRASTO: Bianco puro + Ombra nera netta + Glow arancio
                 color: '#FFFFFF', fontSize: '20px', fontWeight: '600',
                 textShadow: '2px 2px 0 #000000, 0 0 10px rgba(255, 136, 51, 0.8)'
@@ -1648,8 +1673,8 @@
             {
                 pageIndex: 22,
                 content: "• Non usare il MAIUSCOLO (equivale a urlare).\n\n• Rispetta la privacy altrui.\n\n• Non inoltrare catene inutili.\n\n• Sii breve e chiaro.",
-                // Messo in colonna: width ridotta a 40
-                speed: 10, top: 42, left: 5, width: 40,
+                // Testo alzato di 5% (da 42 a 37)
+                speed: 10, top: 37, left: 5, width: 40,
                 // Sans-serif Pulito e Leggibile (Open Sans)
                 fontFamily: "'Open Sans', sans-serif",
                 color: '#F0FFFF', // Bianco Ghiaccio
@@ -1672,8 +1697,8 @@
             {
                 pageIndex: 23,
                 content: "Hai mai letto i 'Termini di Servizio'?\nOgni social ha regole precise su età minima, copyright e comportamenti vietati.",
-                // Messo in colonna: width ridotta a 40
-                speed: 10, top: 80, left: 10, width: 40,
+                // Messo in colonna: width ridotta a 40. Testo alzato di 7% (80 -> 73)
+                speed: 10, top: 73, left: 10, width: 40,
                 color: '#FFFFFF', fontSize: '18px', fontWeight: '700', // Aumentato peso (500 -> 700)
                 fontFamily: "'Rajdhani', sans-serif", // Font Tecnico/Sportivo
                 // MOLTO PIÙ CONTRASTO: Ombra nera solida + Glow
@@ -1816,23 +1841,30 @@
                 fontFamily: "'Open Sans', sans-serif",
                 textShadow: '2px 2px 4px #000000, 0 0 5px rgba(0,0,0,0.9)'
             },
-            // PAGINA 30: FAKE NEWS (Warning Stripe)
+            // PAGINA 30: FAKE NEWS (Restyling Editoriale)
             {
                 pageIndex: 30, content: "FAKE NEWS",
-                speed: 15, top: 10, left: 10, width: 80,
-                fontSize: '44px', fontWeight: '800',
-                effect: 'shine-warning-stripe',
-                fontFamily: "'Bebas Neue', sans-serif"
+                // Allineato a sinistra, font Playfair per look "Giornale"
+                speed: 15, top: 10, left: 5, width: 60,
+                fontSize: '54px', fontWeight: '900', // Molto grande e pesante
+                fontFamily: "'Playfair Display', serif",
+                // Rosso Stampa profondo con ombra carta
+                color: '#b30000',
+                textShadow: '1px 1px 0 #000, 2px 2px 4px rgba(0,0,0,0.4)',
+                textAlign: 'left'
             },
             {
                 pageIndex: 30,
                 content: "Notizie false create per manipolare o fare soldi.\n\nCome difendersi?\nVerifica la fonte.\nControlla la data.\nCerca conferme altrove.",
-                speed: 10, top: 25, left: 10, width: 60,
-                // AUMENTO CONTRASTO: Grassetto + Ombra nera più forte
-                color: '#FFFFE0', // Light Yellow (più luminoso del precedente)
-                fontSize: '20px', fontWeight: '700', // Aumentato peso (500 -> 700)
-                fontFamily: "'Open Sans', sans-serif",
-                textShadow: '2px 2px 4px #000000, 0 0 5px rgba(0,0,0,0.8)'
+                // Testo abbassato per staccarlo dal titolo (da 30 a 45)
+                speed: 10, top: 45, left: 5, width: 40,
+                lineHeight: '1.6',
+                // Bianco Carta con testo scuro per contrasto (o viceversa se sfondo scuro)
+                // Qui mantengo chiaro su scuro: Bianco Caldo
+                color: '#F5F5F5', 
+                fontSize: '20px', fontWeight: '600',
+                fontFamily: "'Montserrat', sans-serif", // Font moderno per il corpo
+                textShadow: '1px 1px 2px #000000'
             },
             // PAGINA 31: TRUFFE E PHISHING (Phishing Effect)
             {
@@ -1858,16 +1890,32 @@
                 lineHeight: '1.6',
                 textShadow: '1px 1px 2px #000000, 0 0 8px rgba(75, 0, 130, 0.6)'
             },
-            // PAGINA 32: DIPENDENZA DIGITALE (Matrix Green)
-           
+            // PAGINA 32: DIPENDENZA DIGITALE - VERSIONE CLEAN & HIGH-CONTRAST (DUPLICATO RIMOSSO)
+            {
+                pageIndex: 32, 
+                content: "DIPENDENZA\nDIGITALE",
+                speed: 15, top: 3, left: 0, width: 100,
+                fontSize: '52px', fontWeight: '900', textAlign: 'center',
+                color: '#FFFFFF',
+                fontFamily: "'Bebas Neue', sans-serif",
+                textShadow: `
+                    3px 3px 0px #000, 
+                    -2px -2px 0px #000, 
+                    0 0 15px #00FF00, 
+                    0 0 30px #00FF00, 
+                    5px 5px 20px rgba(0,0,0,1)`
+            },
             {
                 pageIndex: 32,
                 content: "La paura di essere esclusi (FOMO).\nOre perse a scorrere video senza meta.\n\nLa tecnologia deve essere uno strumento, non una prigione.",
-                // Spostato più a destra e colonna più stretta
-                speed: 10, top: 30, left: 60, width: 35,
-                color: '#ccffcc', fontSize: '18px', textAlign: 'right', fontWeight: '500',
+                speed: 10, top: 32, left: 55, width: 40,
+                color: '#FFFFFF',
+                fontSize: '19px',
+                textAlign: 'right', 
+                fontWeight: '800', 
                 fontFamily: "'Open Sans', sans-serif",
-                textShadow: '0 0 5px #003300'
+                lineHeight: '1.4',
+                textShadow: `2px 2px 0px #000,-1px -1px 0px #000,0 0 8px rgba(0, 255, 0, 0.8),3px 3px 10px rgba(0,0,0,1)`
             },
             // PAGINA 33
             {
@@ -1891,29 +1939,33 @@
             // PAGINA 34
             {
                 pageIndex: 34, content: "SINTESI: RISCHI",
-                speed: 15, top: 10, left: 10, width: 80,
+                speed: 15, top: 10, left: 5, width: 80,
                 fontSize: '28px', fontWeight: '800',
                 effect: 'shine-danger-triangle'
             },
             {
                 pageIndex: 34,
                 content: "• Cyberbullismo: tolleranza zero.\n\n• Fake News: verifica sempre.\n\n• Phishing: occhio ai link.\n\n• Dipendenza: disconnettiti ogni tanto.",
-                speed: 10, top: 25, left: 10, width: 80,
-                color: '#ff9999', fontSize: '22px', fontWeight: '500',
-                textShadow: '0 0 8px rgba(255, 51, 85, 0.7), 2px 2px 4px rgba(0,0,0,0.8)'
+                // Testo in colonna stretta a sinistra (width 40)
+                speed: 10, top: 25, left: 5, width: 40,
+                // Applicato stesso effetto gradiente del titolo
+                effect: 'shine-danger-triangle', 
+                fontSize: '22px', fontWeight: '700', // Grassetto per far risaltare il gradiente
+                textShadow: '0 0 5px rgba(255, 51, 85, 0.4)' // Leggera ombra per definizione
             },
             // PAGINA 35
             {
                 pageIndex: 35,
                 content: "SICUREZZA\nDIGITALE",
-                speed: 15, top: 10, left: 10, width: 80,
+                speed: 15, top: 10, left: 5, width: 80,
                 fontSize: '42px', fontWeight: '800',
                 effect: 'shine-cyber-city'
             },
             {
                 pageIndex: 35,
                 content: "Proteggi il tuo mondo virtuale.\nLe chiavi di casa non le daresti a nessuno, vero?",
-                speed: 10, top: 35, left: 10, width: 60,
+                // Testo in colonna stretta a sinistra (width 40, left 5)
+                speed: 10, top: 35, left: 5, width: 40,
                 color: '#ce93d8', fontSize: '20px', fontWeight: '500',
                 textShadow: '0 0 8px rgba(171, 71, 188, 0.7), 2px 2px 4px rgba(0,0,0,0.8)'
             },
@@ -1928,7 +1980,9 @@
             {
                 pageIndex: 36,
                 content: "No: 123456, password, iltuonome.\nSì: Frasi lunghe, numeri, simboli.\nUsa password diverse per ogni account!",
-                speed: 10, top: 30, left: 55, width: 40,
+                // Testo abbassato ulteriormente (da 37 a 45) e interlinea aumentata
+                speed: 10, top: 45, left: 55, width: 40,
+                lineHeight: '1.8', // Interlinea aumentata
                 color: '#99eeff', fontSize: '20px', fontWeight: '500',
                 textShadow: '0 0 8px rgba(0, 221, 238, 0.7), 2px 2px 4px rgba(0,0,0,0.8)'
             },
@@ -1959,44 +2013,56 @@
                 pageIndex: 38,
                 content: "Non rimandarli!\nGli aggiornamenti chiudono le falle di sicurezza che gli hacker potrebbero usare.",
                 speed: 10, top: 30, left: 55, width: 40,
-                color: '#99ddff', fontSize: '18px', fontWeight: '500',
-                textShadow: '0 0 8px rgba(0, 204, 255, 0.7), 2px 2px 4px rgba(0,0,0,0.8)'
+                // AUMENTO CONTRASTO: Bianco puro + Grassetto + Bordo Nero
+                color: '#FFFFFF', fontSize: '20px', fontWeight: '700',
+                textShadow: '2px 2px 0 #000000, 0 0 10px #00BFFF'
             },
             // PAGINA 39
             {
                 pageIndex: 39,
                 content: "SINTESI: SICUREZZA",
-                speed: 15, top: 10, left: 10, width: 80,
+                speed: 15, top: 10, left: 5, width: 80,
                 fontSize: '28px', fontWeight: '800',
                 effect: 'shine-digital-fingerprint'
             },
             {
                 pageIndex: 39,
                 content: "• Password complesse e uniche.\n• Attiva sempre la 2FA.\n• Aggiorna software e app.\n• Attento a dove clicchi.",
-                speed: 10, top: 25, left: 10, width: 80,
-                color: '#99ffee', fontSize: '22px', fontWeight: '500',
-                textShadow: '0 0 8px rgba(0, 255, 204, 0.7), 2px 2px 4px rgba(0,0,0,0.8)'
+                // Testo ordinato in colonna a sinistra (width 40, left 5)
+                speed: 10, top: 25, left: 5, width: 40,
+                // AUMENTO NITIDEZZA E RILIEVO: Colore Ghiaccio Brillante + Ombra 3D Netta
+                color: '#E0FFFF', 
+                fontSize: '22px', fontWeight: '700', // Bold per definizione
+                // Layering di ombre per effetto rilievo solido
+                textShadow: '1px 1px 0 #008080, 2px 2px 0 #004d4d, 3px 3px 4px #000000'
             },
             // PAGINA 41: EDUCAZIONE DIGITALE
             {
                 pageIndex: 41,
                 content: "EDUCAZIONE\nDIGITALE",
-                speed: 15, top: 10, left: 10, width: 80,
-                fontSize: '42px', fontWeight: '800',
-                effect: 'shine-knowledge-tree'
+                // Spostato a sinistra di 7% (da 10 a 3)
+                speed: 15, top: 10, left: 3, width: 80,
+                // NITIDEZZA MASSIMA: Colore Solido + Bordo Nero Spesso
+                color: '#00FFCC', 
+                fontSize: '42px', fontWeight: '900', 
+                fontFamily: "'Montserrat', sans-serif",
+                textShadow: '3px 3px 0 #000000, 0 0 10px rgba(0, 255, 204, 0.6)'
             },
             {
                 pageIndex: 41,
                 content: "Imparare a navigare il digitale non è solo tecnica.\nÈ sviluppare consapevolezza, pensiero critico e responsabilità.",
-                speed: 10, top: 60, left: 10, width: 60,
-                color: '#00ff00', fontSize: '20px', fontWeight: '500',
-                textShadow: '0 0 10px rgba(0, 255, 0, 0.7), 2px 2px 4px rgba(0,0,0,0.8)'
+                // Testo ristretto in colonna a sinistra per evitare sovrapposizione immagine
+                speed: 10, top: 60, left: 5, width: 40,
+                // AUMENTO LUMINOSITÀ: Verde chiarissimo (Honeydew/Neon Light) + Contrasto Nero
+                color: '#ccffcc', fontSize: '20px', fontWeight: '700', // Grassetto aumentato
+                textShadow: '2px 2px 0 #000000, 0 0 15px #00FF00' // Bordo nero netto + Glow verde intenso
             },
             // PAGINA 42: PENSIERO CRITICO
             {
                 pageIndex: 42,
                 content: "PENSIERO\nCRITICO",
-                speed: 15, top: 10, left: 25, width: 80,
+                // Spostato ulteriormente a destra di 5% (da 44 a 49)
+                speed: 15, top: 10, left: 49, width: 80,
                 fontSize: '40px', fontWeight: '800',
                 effect: 'shine-critical-mind'
             },
@@ -2011,70 +2077,95 @@
             {
                 pageIndex: 43,
                 content: "FILTRO\nINFORMAZIONI",
-                speed: 15, top: 10, left: 10, width: 80,
-                fontSize: '38px', fontWeight: '800',
-                effect: 'shine-truth-filter'
+                // Spostato a sinistra (da 5 a 2) e dimensione ridotta (da 36 a 30)
+                speed: 15, top: 5, left: 2, width: 45,
+                // Font Tecnologico (Exo 2)
+                fontFamily: "'Exo 2', sans-serif",
+                fontSize: '30px', fontWeight: '900',
+                // Nuovo effetto Duality Restyled (Rosso/Verde Scanner)
+                effect: 'shine-truth-duality',
+                textAlign: 'left'
             },
             {
                 pageIndex: 43,
                 content: "Impara a distinguere:\n\n• Fonte affidabile vs blog sconosciuto\n\n• Fatto vs opinione\n\n• Notizia vs pubblicità mascherata",
-                speed: 10, top: 30, left: 5, width: 70,
-                color: '#99ffcc', fontSize: '20px', fontWeight: '500',
-                textShadow: '0 0 8px rgba(0, 204, 68, 0.7), 2px 2px 4px rgba(0,0,0,0.8)'
+                // Testo ordinato in colonna a sinistra (width 40)
+                speed: 10, top: 30, left: 5, width: 40,
+                // RIPRISTINATO COLORE MENTA (#e6fff2) mantenendo il contrasto tramite l'ombra
+                color: '#e6fff2', fontSize: '20px', fontWeight: '700',
+                textShadow: '2px 2px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000'
             },
             // PAGINA 44: EQUILIBRIO DIGITALE
             {
                 pageIndex: 44,
                 content: "EQUILIBRIO\nDIGITALE",
-                speed: 15, top: 10, left: 10, width: 80,
-                color: 'rgba(224, 204, 19, 0.48)', fontSize: '36px', fontWeight: '800',
-                // Sostituito il nero (#000) con oro scuro (#8B6508)
-                textShadow: '1px 1px 0 #8B6508, -1px -1px 0 #8B6508, 2px 2px 4px #8B6508'
+                // SPOSTATO A SINISTRA DI 3%: left da 45 a 42
+                speed: 15, top: 10, left: 42, width: 50,
+                fontSize: '42px', fontWeight: '900',
+                fontFamily: "'Montserrat', sans-serif",
+                effect: 'shine-zen-balance',
+                textAlign: 'right' 
             },
             {
                 pageIndex: 44,
                 content: "La tecnologia è uno strumento, non la vita stessa.\nStacca il telefono. Guarda il mondo reale. Respira.",
-                speed: 10, top: 75, left: 10, width: 80,
-                color: 'rgba(224, 204, 19, 0.48)', fontSize: '20px', fontWeight: '500',
-                // Sostituito il nero (#000) con oro scuro (#8B6508)
-                textShadow: '1px 1px 0 #8B6508, -1px -1px 0 #8B6508, 2px 2px 4px #8B6508'
+                // Testo in colonna stretta sulla DESTRA (left 55, width 40)
+                speed: 10, top: 30, left: 55, width: 40,
+                lineHeight: '1.8',
+                textAlign: 'right',
+                color: '#F0FFF0', // Honeydew (Bianco verdastro) per tema natura
+                fontSize: '20px', fontWeight: '600',
+                // Ombra Verde Foresta Scuro per stacco netto
+                textShadow: '2px 2px 0 #1a3300, 0 0 10px rgba(100, 255, 100, 0.6)'
             },
             // PAGINA 45: STRUMENTI DIGITALI
             {
                 pageIndex: 45,
                 content: "STRUMENTI\nDIGITALI",
-                speed: 15, top: 10, left: 10, width: 80,
-                fontSize: '38px', fontWeight: '800',
-                effect: 'shine-digital-tools'
+                // Allineamento a sinistra per layout editoriale
+                speed: 15, top: 10, left: 5, width: 50,
+                fontSize: '42px', fontWeight: '900',
+                fontFamily: "'Montserrat', sans-serif",
+                effect: 'shine-digital-tools',
+                textAlign: 'left'
             },
             {
                 pageIndex: 45,
-                content: "Impara a usare:\n• Software di produttività\n• Piattaforme collaborative\n• Strumenti creativi\n\nSii creatore, non solo consumatore.",
-                speed: 10, top: 30, left: 10, width: 70,
-                color: '#b3d9ff', fontSize: '20px', fontWeight: '500',
-                textShadow: '0 0 8px rgba(51, 204, 255, 0.7), 2px 2px 4px rgba(0,0,0,0.8)'
+                content: "Impara a usare:\n\n• Software di produttività\n• Piattaforme collaborative\n• Strumenti creativi\n\nSii creatore, non solo consumatore.",
+                // Testo in colonna stretta, interlinea aumentata per eleganza
+                speed: 10, top: 30, left: 5, width: 40,
+                lineHeight: '1.8', 
+                textAlign: 'left',
+                color: '#E6F2FF', fontSize: '20px', fontWeight: '600',
+                // Ombra scura per stacco netto
+                textShadow: '2px 2px 0 #002b4d, 0 0 10px rgba(51, 204, 255, 0.6)'
             },
-            // PAGINA 46: FUTURO DIGITALE
+            // PAGINA 46: FUTURO DIGITALE (El Dorado Style)
             {
                 pageIndex: 46,
                 content: "IL FUTURO\nÈ TUO",
                 speed: 15, top: 10, left: 10, width: 80,
-                fontSize: '44px', fontWeight: '800',
-                effect: 'shine-future-dawn'
+                fontSize: '56px', fontWeight: '900',
+                // Nuovo effetto El Dorado (Oro Antico + Cinzel)
+                effect: 'shine-el-dorado',
+                textAlign: 'center'
             },
             {
                 pageIndex: 46,
                 content: "Il mondo digitale è in continua evoluzione.\nSii pronto ad imparare sempre.\nSii curioso. Sii etico. Sii protagonista.",
                 speed: 10, top: 56, left: 10, width: 80,
-                color: '#fff88f', fontSize: '23px', fontWeight: '500',
-                // Applicato stile 3D bronzo mantenendo il colore testo originale
-                textShadow: '1px 1px 0 #8B6508, -1px -1px 0 #8B6508, 2px 2px 4px #8B6508'
+                // Colore Crema/Oro Chiaro con ombra Terra Bruciata
+                color: '#FFF8DC', fontSize: '24px', fontWeight: '600',
+                fontFamily: "'Cinzel', serif", // Font abbinato al titolo
+                textAlign: 'center',
+                textShadow: '2px 2px 0 #3E2723, 0 0 10px rgba(255, 215, 0, 0.5)'
             },
-            // PAGINA 47: CONCLUSIONE
+            // PAGINA 47: CONCLUSIONE (Testo diviso Sopra/Sotto la Sfera)
             {
                 pageIndex: 47,
                 content: "SEI PRONTO?",
-                speed: 20, top: 10, left: 10, width: 80,
+                // Alzato titolo al 5% per fare spazio
+                speed: 20, top: 5, left: 10, width: 80,
                 fontSize: '48px', fontWeight: '800',
                 // Magenta Elettrico
                 color: '#FF00FF', 
@@ -2082,13 +2173,23 @@
                 textShadow: '1px 1px 0 #8B008B, 2px 2px 0 #8B008B, 3px 3px 0 #8B008B, 4px 4px 5px rgba(0,0,0,0.9)'
             },
             {
+                // PARTE SUPERIORE (Sopra la Sfera)
                 pageIndex: 47,
-                content: "Ora hai le conoscenze.\nUsa il digitale con saggezza.\nRispetta gli altri.\nProteggi te stesso.\n\nIl potere è nelle tue mani.",
+                content: "Il digitale è un'estensione della tua realtà.\nOgni click è una scelta, ogni post lascia un segno.",
+                speed: 10, top: 20, left: 10, width: 80,
+                // Ciano Elettrico
+                color: '#00FFFF', 
+                fontSize: '22px', fontWeight: '600', textAlign: 'center',
+                textShadow: '1px 1px 0 #008B8B, 2px 2px 0 #008B8B, 3px 3px 3px rgba(0,0,0,0.9)'
+            },
+            {
+                // PARTE INFERIORE (Sotto la Sfera)
+                pageIndex: 47,
+                content: "Non essere solo un utente passivo: sii l'architetto del tuo mondo.\nCostruisci un web migliore, un'azione alla volta.",
                 speed: 10, top: 75, left: 10, width: 80,
                 // Ciano Elettrico
                 color: '#00FFFF', 
-                fontSize: '22px', fontWeight: '500', textAlign: 'center',
-                // Effetto 3D Rilievo: Colore profondo + Ombra
+                fontSize: '22px', fontWeight: '600', textAlign: 'center',
                 textShadow: '1px 1px 0 #008B8B, 2px 2px 0 #008B8B, 3px 3px 3px rgba(0,0,0,0.9)'
             },
 
